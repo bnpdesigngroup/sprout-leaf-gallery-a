@@ -25575,15 +25575,13 @@ header[role="banner"] {
 
 header .nav {
   background: none;
-  color: #111111;
   border-width: 0;
   border-radius: 0;
-  margin-bottom: -2em;
   margin-top: 5px;
 }
 
-header .nav .hamburger {
-  color: #111111;
+header .nav:before {
+  padding-left: 0;
 }
 
 header .nav a {
@@ -25593,12 +25591,19 @@ header .nav a {
 }
 
 header .nav a,
+header .nav a:visited {
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+header .nav a,
 header .nav a:visited,
 header .nav a:active,
 header .nav a:hover,
 header .nav a:focus {
   background: none;
-  color: #111111;
 }
 
 header .nav a.disabled {
@@ -25608,6 +25613,10 @@ header .nav a.disabled {
   cursor: not-allowed;
   text-decoration: none;
   outline: none;
+}
+
+header .nav li ul {
+  border: none;
 }
 
 header .nav li ul ul {
@@ -26184,12 +26193,8 @@ a img.aligncenter {
    * Header - Navigation
    */
 
-  header .nav li ul {
-    border: none;
-  }
-
-  header .nav li ul ul {
-    top: 0;
+  header .nav > ul > li:first-child > a {
+    padding-left: 0;
   }
 
   /**
