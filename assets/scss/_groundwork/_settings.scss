@@ -1,0 +1,57 @@
+// =============================================
+//              Custom Settings
+//          Last Updated:2013-10-20
+// =============================================
+
+$small-tablet-width:   30.125em;
+$large-tablet-width:   48em;
+$desktop-width:        64em;
+$large-desktop-width:  80em;
+
+// leaf relative paths
+$leaf_path:                 "../../sprout-leaf-gallery-a/assets/";
+$leaf_fonts_path:            "../" + $leaf-path + "/fonts/";
+$leaf_images_path:           "../" + $leaf-path + "/img/";
+
+// colors
+$primary-color: #741414;
+$secondary-color: #EBE6CF;
+$tertiary-color: #B81414;
+/* Coffee
+$primary-color: #633513;
+$secondary-color: #EDDCA8;
+$tertiary-color: #361904;
+$primary-accent: #F08900;
+$secondary-accent: #E5090B;
+*/
+
+// breakpoints
+$breakpoints:          "mobile" "small-tablet" "large-tablet" "desktop";
+$breakpoint-sizes:     0 $small-tablet-width $large-tablet-width $desktop-width;
+
+// grid system
+$grid-base:            "desktop";
+
+// web fonts
+$web-font-classes:     true !default;
+$web-font-names:       "napoli-serial-light",
+                       "kunstler",
+                       "sourcesanspro" !default;
+$web-font-files:       $leaf_fonts_path + "napoli-serial-light-regular-webfont",
+                       $leaf_fonts_path + "kunstler-webfont",
+                       "sourcesanspro-regular-webfont" !default;
+
+// typography
+$font-family:          "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+$heading-font:         "napoli-serial-light";
+$quote-font:           "sourcesanspro";
+
+// links
+$link-color:           #8AD5F4;
+$link-active:          #F08900;
+
+// navigation
+$navigation-base:      "desktop";
+
+// font awesome
+$fa-css-prefix:        "icon";

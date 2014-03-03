@@ -1,0 +1,764 @@
+/****************************************************************
+ * Author: Justin Proffitt
+ * Stylesheet: Base
+ *
+ * These styles will show on all devices, so keep it light!
+ ****************************************************************/
+
+/********************************
+ * Global
+ ********************************/
+
+%p, %ul, %ol, %dl, %blockquote, %pre, %code {
+	@extend %gap-bottom;
+}
+
+%heading {
+
+	color: #371800;
+
+}
+
+.container {
+
+	@include _pad-left();
+	@include _pad-right();
+
+}
+
+/**
+ * Header
+ */
+
+header[role="banner"] {
+
+	border-bottom: 2em solid $secondary-color;
+
+}
+
+#inner_header {
+
+	position: relative;
+
+}
+
+/**
+ * Header - Banner
+ */
+
+.brand {
+
+	img {
+
+		vertical-align: bottom;
+
+	}
+
+	.high-res {
+
+	}
+
+}
+
+
+/**
+ * Header - Aside
+ */
+
+.tagline {
+
+	@include _gap-top(0.5);
+
+}
+
+/**
+ * Header - Contact Information
+ */
+
+.contact {
+
+}
+
+/**
+ * Header - Navigation
+ */
+
+header .nav {
+
+	background: none;
+	border-width: 0;
+	border-radius: 0;
+
+	@include _gap-top(0.5);
+
+	&:before {
+
+		padding-left: 0;
+
+	}
+
+	.hamburger {
+
+	}
+
+	a {
+
+		background: none;
+		transition: background 0.5s, color 0.5s;
+
+		&, &:visited, &:active, &:hover, &:focus {
+
+			background: none;
+			@include _pad-top(0.5);
+			@include _pad-right;
+			@include _pad-bottom(0.5);
+			@include _pad-left;
+
+		}
+
+		&.disabled {
+
+			@include state(disabled, normal, darken($white, 20%));
+
+		}
+
+
+	}
+
+	li {
+
+		&.current a {
+
+		}
+
+		ul {
+
+			border: none;
+
+			ul {
+
+				top: 0;
+
+			}
+
+		}
+
+	}
+
+}
+
+/**
+ * Document
+ */
+
+div[role="document"] {
+
+}
+
+/**
+ * Document - Content
+ */
+
+#inner_content {
+
+	padding-bottom: 1px; // Catch margins
+
+	@include _pad-top();
+
+}
+
+/**
+ * Document - Content - Main
+ */
+
+.main {
+
+}
+
+// Comment List
+
+#comments {
+
+}
+
+	.media-list {
+
+		& > li {
+
+			list-style: none;
+
+		}
+
+	}
+
+		.avatar {
+
+			@include _gap-right();
+			@include _gap-bottom();
+
+		}
+
+		.media-body {
+
+			p {
+
+				clear: both;
+
+			}
+
+		}
+
+// Comment Form
+
+#commentform {}
+
+	.form-group {
+
+		@include _gap-bottom();
+
+	}
+
+// Pagination Navigation
+
+.pager {
+
+	list-style: none;
+
+	@include _zero();
+	@include _gap-bottom();
+	@include _clear();
+
+	.previous {
+
+		@include _pull-left();
+
+	}
+
+	.next {
+
+		@include _pull-right();
+
+	}
+
+}
+
+/**
+ * Document - Content - Sidebar
+ */
+
+.sidebar {
+
+	h3 {
+
+	}
+
+	ul {
+
+		list-style: none;
+
+	}
+
+}
+
+/**
+ * Footer
+ */
+
+footer[role="contentinfo"] {
+
+	border-top: 2em solid #000;
+
+}
+
+#inner_footer {
+
+	position: relative;
+
+	@include _pad-top();
+
+}
+
+/**
+ * Footer - Social
+ */
+
+.social-links {
+
+	position: absolute;
+	bottom: 100%;
+	list-style: none;
+	white-space: nowrap;
+	margin: 0;
+
+	li {
+
+		display: inline-block;
+
+	}
+
+	i {
+
+		line-height: 2;
+
+	}
+
+	a {
+
+		display: block;
+		width: 2em;
+		color: inherit;
+		text-decoration: none;
+		text-align: center;
+
+		transition: background 0.5s, color 0.5s;
+
+		&:before {
+
+			display: none;
+
+		}
+
+		&:hover {
+
+			color: $white;
+
+			&.dribbble {
+
+				background: #EA4C89;
+
+			}
+
+			&.dropbox {
+
+				background: #007FE1;
+
+			}
+
+			&.facebook {
+
+
+				background: #3A5898;
+
+			}
+
+			&.flickr {
+
+				background: #FF0083;
+
+			}
+
+			&.foursquare {
+
+				background: #0A9ACF;
+
+			}
+
+			&.github {
+
+				background: #171516;
+
+			}
+
+			&.google-plus {
+
+				background: #DE492F;
+
+			}
+
+			&.instagram {
+
+				background: #231f20;
+
+			}
+
+			&.linkedin {
+
+				background: #007ab8;
+
+			}
+
+			&.pinterest {
+
+				background: #CA2128;
+
+			}
+
+			&.stackoverflow {
+
+				background: #FF7312;
+
+			}
+
+			&.tumblr {
+
+				background: #44546b;
+
+			}
+
+			&.twitter {
+
+				background: #00abf0;
+
+			}
+
+			&.youtube {
+
+				background: #cd332d;
+
+			}
+
+		}
+
+	}
+
+
+}
+
+/**
+ * Widgets
+ */
+
+.widget {
+
+	@include _gap-bottom();
+
+}
+
+.flexslider {
+
+	overflow: hidden;
+
+}
+
+.gallery {
+
+	a {
+
+		&:before {
+
+			content: $fa-var-arrows-alt;
+			font-family: 'FontAwesome';
+			background: #000;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			color: $white;
+			font-size: 0;
+			line-height: 0;
+			text-align: center;
+			padding: 50% 0 0; // Relies on thumbnail being square
+			opacity: 0;
+			transition: opacity 0.5s, font-size 0.5s;
+
+		}
+
+		&:after {
+
+			display: none;
+
+		}
+
+		img {
+
+			display: block;
+
+		}
+
+	}
+
+}
+
+	.gallery-item {
+
+		position: relative;
+
+	}
+
+		.gallery-icon {
+
+			position: relative;
+			overflow: hidden;
+
+		}
+
+		.gallery-caption {
+
+			background: #000;
+			position: absolute;
+			bottom: 0;
+			left: $gutter;
+			right: 0;
+			color: $white;
+			margin: 0;
+			opacity: 0.5;
+			transition: opacity 0.5s;
+			pointer-events: none;
+
+			@include _padded(0.5);
+
+		}
+
+.no-js {
+
+	.ml-slider {
+
+		.slides > li:first-child {
+
+			display: block !important;
+
+		}
+
+	}
+
+}
+
+.wpcf7 {
+
+	input, textarea {
+
+		&[aria-required="true"] {
+
+			position: relative;
+
+			&:before {
+
+				content: "*";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 0;
+				height: 0;
+				color: $red;
+
+			}
+
+		}
+
+		&[aria-invalid="false"] {
+
+			@extend %field;
+
+			color: $black;
+
+		}
+
+	}
+
+	input[aria-invalid="false"],
+	textarea[aria-invalid="false"] {
+
+		@extend %field;
+		color: $black;
+
+	}
+
+	textarea[aria-invalid="false"] {
+
+		@extend %textarea;
+
+	}
+
+	.wpcf7-not-valid-tip,
+	.wpcf7-validation-errors {
+
+		@extend %message;
+		@extend %message-error;
+
+	}
+
+	.wpcf7-response-output {
+
+		margin: 0;
+
+		@include _gap-top(2);
+
+	}
+
+	.wpcf7-mail-sent-ok {
+
+		@extend %message;
+		@extend %message-success;
+
+	}
+
+}
+
+/********************************
+ * Home Page
+ ********************************/
+
+.home {
+
+	/**
+	 * Document
+	 */
+
+	/**
+	 * Document - Content
+	 */
+
+	#inner_content {
+
+		padding: 0;
+
+	}
+
+	/**
+	 * Document - Content - Main
+	 */
+
+	.page-header,
+	.page-header h1 {
+
+		height: 0;
+		visibility: hidden;
+
+		@include _zero();
+
+	}
+
+}
+
+/********************************
+ * Blog
+ ********************************/
+
+/********************************
+ * Archive
+ ********************************/
+
+/********************************
+ * Post
+ ********************************/
+
+/********************************
+ * Page
+ ********************************/
+
+/********************************
+ * Search
+ ********************************/
+
+/********************************
+ * 404 - Not Found
+ ********************************/
+
+/********************************
+ * WordPress Core
+ ********************************/
+
+/**
+ * Generated Classes
+ * (See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes)
+ */
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/**
+ * Admin Bar
+ */
+
+#wpadminbar {
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	border: none;
+	border-radius: 0;
+
+	&:before {
+
+		display: none;
+
+	}
+
+	.quicklinks {
+
+		background: none;
+		border: none;
+
+
+	}
+
+}
